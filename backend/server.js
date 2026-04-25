@@ -5,12 +5,16 @@ require('dotenv').config();
 
 const app = express();
 
+// CORS — allow all origins (fixes the blocked error)
 app.use(cors({
-  origin: [
-    'https://smart-parking-xyz.vercel.app',  // your actual Vercel URL
-    'http://localhost:5173'                    // keep for local dev
-  ]
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));
