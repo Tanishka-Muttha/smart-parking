@@ -9,7 +9,6 @@ app.use(cors({
   origin: [
     'https://smart-parking-nine-beta.vercel.app'
   ],
-  credentials: true
 }));
 app.use(express.json());
 
