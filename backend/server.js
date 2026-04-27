@@ -6,7 +6,10 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: '*'   // we'll tighten this after frontend is deployed
+  origin: [
+    'https://smart-parking-nine-beta.vercel.app'
+  ],
+  credentials: true
 }));
 app.use(express.json());
 
