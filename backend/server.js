@@ -7,13 +7,13 @@ const app = express();
 
 // CORS — allow all origins (fixes the blocked error)
 app.use(cors({
-  origin: '*',
+  origin: '/*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Handle preflight requests
-app.options('*', cors());
+app.options('/*', cors());
 
 app.use(express.json());
 
