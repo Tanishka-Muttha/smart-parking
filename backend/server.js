@@ -5,16 +5,9 @@ require('dotenv').config();
 
 const app = express();
 
-// CORS — allow all origins (fixes the blocked error)
 app.use(cors({
-  origin: '/*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: '*'   // we'll tighten this after frontend is deployed
 }));
-
-// Handle preflight requests
-app.options('/*', cors());
-
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));
