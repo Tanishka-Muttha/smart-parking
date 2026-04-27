@@ -1,2 +1,2 @@
-const API = "https://smart-parking-backend.onrender.com" || 'http://localhost:5000';
+const API = "https://smart-parking-backend.onrender.com" ;
 export default API;
